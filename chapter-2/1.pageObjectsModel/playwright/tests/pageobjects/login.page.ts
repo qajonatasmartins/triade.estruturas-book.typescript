@@ -24,7 +24,8 @@ export class LoginPage extends BasePage {
      * @param username o username para fazer login
      */
     async setUsername(username: string) {
-        this.inputUsername.fill(username);
+        await this.inputUsername.waitFor({ state: 'visible' });
+        await this.inputUsername.fill(username);
     }
 
     /**
@@ -32,14 +33,16 @@ export class LoginPage extends BasePage {
      * @param password a senha para fazer login
      */
     async setPassword(password: string) {
-        this.inputPassword.fill(password);
+        await this.inputPassword.waitFor({ state: 'visible' });
+        await this.inputPassword.fill(password);
     }
 
     /**
      * clica no botão de login
      */
     async clickSubmit() {
-        this.btnSubmit.click();
+        await this.btnSubmit.waitFor({ state: 'visible' });
+        await this.btnSubmit.click();
     }
 
     /**
