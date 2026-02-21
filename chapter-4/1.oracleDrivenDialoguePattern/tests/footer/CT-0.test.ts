@@ -5,7 +5,6 @@ import { ct0 } from '../../data/footer/footer.data'
 describe(describeName.footer, async () => {
 
     it('[CT-000] -  Validar o cadastro de e-mail na Subscription com sucesso', async () => {
-        await browser.url(`${process.env.URL}`)
         /** Arrange */
         await footerActions.doSubscription(ct0.email)
         /** Assert */

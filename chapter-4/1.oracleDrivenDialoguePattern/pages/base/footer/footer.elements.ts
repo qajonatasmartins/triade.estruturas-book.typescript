@@ -1,5 +1,4 @@
-import { buttonBase, labelBase } from "../../../constants"
-import { $ } from "@wdio/globals"
+import { labelBase } from "../../../constants"
 
 export default class FooterElements {
 
@@ -11,7 +10,7 @@ export default class FooterElements {
     /**
      * Mapeamento do botão de confirmar a Subscribe
      */
-    get btnSubscribe() { return $(`#susbscribe_email ${buttonBase.btnSubmit}`) }
+    get btnSubscribe() { return $('#subscribe') }
 
     /**
      * Mapeamento do alerta de sucesso do footer de Subscribe

@@ -1,7 +1,4 @@
 import ButtonBase from "./pages/base/components/button/button.base";
-import ClickCustomCommands from "./core-web/commands/click.commands"
-import SetCustomCommands from "./core-web/commands/set.commands"
-import GetTextCustomCommands from "./core-web/commands/getText.commands"
 import LabelBase from "./pages/base/components/label/label.base";
 import { assert, should, expect } from 'chai'
 import FooterActions from "./pages/base/footer/footer.actions";

@@ -13,7 +13,7 @@
     "@faker-js/faker": "^10.3.0"
   },
   "scripts": {
-    "test": "wdio run ./config/wdio.conf.ts"
+    "test": "wdio run ./config/chrome/chrome.conf.ts"
   },
   "dependencies": {
     "chai": "^6.2.2",
