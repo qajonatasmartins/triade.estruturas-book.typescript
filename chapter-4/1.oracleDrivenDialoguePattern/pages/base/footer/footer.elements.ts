@@ -15,5 +15,5 @@ export default class FooterElements {
     /**
      * Mapeamento do alerta de sucesso do footer de Subscribe
      */
-    get lblAlertSuccess() { return $(`#success-subscribe ${labelBase.lblAlertSuccess}`) }
+    get lblAlertSuccess() { return $(`#success-subscribe ${labelBase.lblAlertSuccess()}`) }
 }

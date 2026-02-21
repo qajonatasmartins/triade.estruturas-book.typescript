@@ -6,7 +6,7 @@ export default class LoginElements {
     /**
      * Mapeamento do campo 'Email Address' do login to your account
      */
-    public get inputEmailAdresLogin() { return $('[data-qa="login-email"]'); }
+    public get inputEmailAddressLogin() { return $('[data-qa="login-email"]'); }
 
     /**
      * Mapeamento do campo 'Password' do login to your account
@@ -16,7 +16,7 @@ export default class LoginElements {
     /**
      * Mapeamento do botão de [Login] do login to your account
      */
-    public get btnLogin() { return $(`[data-qa="login-button"] ${buttonBase.btnSubmit}`); }
+    public get btnLogin() { return $(`[data-qa="login-button"]${buttonBase.btnSubmit()}`); }
     //#endregion
 
     //#region Signup
@@ -33,6 +33,6 @@ export default class LoginElements {
     /**
      * Mapeamento do botão de [Signup] do New User Signup!
      */
-    public get btnSignup() { return $(`[data-qa="signup-button"] ${buttonBase.btnSubmit}`); }
+    public get btnSignup() { return $(`[data-qa="signup-button"]${buttonBase.btnSubmit()}`); }
     //#endregion
 }

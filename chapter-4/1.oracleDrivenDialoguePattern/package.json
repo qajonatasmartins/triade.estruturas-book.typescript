@@ -2,15 +2,15 @@
   "name": "1.oracleDrivenDialoguePattern",
   "type": "module",
   "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
     "@types/chai": "^5.2.3",
-    "@types/node": "^25.2.3",
+    "@types/node": "^25.3.0",
     "@wdio/cli": "^9.24.0",
     "@wdio/globals": "^9.23.0",
     "@wdio/local-runner": "^9.24.0",
     "@wdio/mocha-framework": "^9.24.0",
     "@wdio/spec-reporter": "^9.24.0",
-    "expect-webdriverio": "^5.6.4",
-    "@faker-js/faker": "^10.3.0"
+    "expect-webdriverio": "^5.6.4"
   },
   "scripts": {
     "test": "wdio run ./config/chrome/chrome.conf.ts"
