@@ -1,0 +1,6 @@
+[submodule "chapter-4/1.oracleDrivenDialoguePattern/core-web"]
+	path = chapter-4/1.oracleDrivenDialoguePattern/core-web
+	url = https://github.com/qajonatasmartins/core-web.git
+[submodule "chapter-4/1.oracleDrivenDialoguePattern/core-api"]
+	path = chapter-4/1.oracleDrivenDialoguePattern/core-api
+	url = https://github.com/qajonatasmartins/core-api.git

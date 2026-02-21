@@ -1,4 +1,4 @@
-import { buttonBase } from "../../constants";
+import { buttonBase } from "../../../constants";
 
 export default class NavBarElements {
 
@@ -10,20 +10,20 @@ export default class NavBarElements {
     /**
      * Mapeamento do botão [Home] da NavBar
      */
-    get btnHomeMenu() { return buttonBase.btnMenu(1); }
+    get btnHomeMenu() { return $(`${buttonBase.btnMenu = 1}`) }
 
     /**
      * Mapeamento do botão [Products] da NavBar
      */
-    get btnProductsMenu() { return buttonBase.btnMenu(2); }
+    get btnProductsMenu() { return $(`${buttonBase.btnMenu = 2}`) }
 
     /**
      * Mapeamento do botão [Cart] da NavBar
      */
-    get btnCartMenu() { return buttonBase.btnMenu(3); }
+    get btnCartMenu() { return $(`${buttonBase.btnMenu = 3}`) }
 
     /**
      * Mapeamento do botão [Signup/Login] da NavBar
      */
-    get btnLoginMenu() { return buttonBase.btnMenu(4); }
+    get btnLoginMenu() { return $(`${buttonBase.btnMenu = 4}`) }
 }
