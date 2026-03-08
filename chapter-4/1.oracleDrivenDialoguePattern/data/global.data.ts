@@ -1,4 +1,5 @@
 export const feature = {
+    account: 'Account',
     login: 'Login',
     footer: 'Footer',
     logout: 'Logout'
