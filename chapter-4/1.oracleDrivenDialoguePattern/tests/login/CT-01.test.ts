@@ -5,13 +5,17 @@ import { ct01 } from '../../data/login/login.data'
 
 describe(describeName.footer, async () => {
 
-    it('[CT-01] -  Realizar login com sucesso na plataforma', async () => {
+    before('Pré-condição: Abrir a tela de login', async () => {
+        /** Arrange */
+        await navBarActions.openLogin()
+    })
+
+    it('[CT-01] - Realizar login com sucesso na plataforma', async () => {
         allure.addFeature(feature.login)
         allure.addSeverity(severity.critical)
         allure.addTag("@smoke")
         allure.addLink(`${process.env.TEST_CASE_URL}/1`, "Test Case")
-        /** Arrange */
-        await navBarActions.openLogin()
+        /** Act */
         await loginActions.toLogin(ct01)
         /** Assert */
         await navBarQuestions.whatIsTheLoggedInUsersName(ct01.userName)

@@ -10,7 +10,7 @@ describe(describeName.footer, async () => {
         allure.addSeverity(severity.normal)
         allure.addTag("@regression")
         allure.addLink(`${process.env.TEST_CASE_URL}/2`, "Test Case")
-        /** Arrange */
+        /** Arrange & Act */
         await footerActions.doSubscription(ct2.email)
         /** Assert */
         await footerQuestions.wasTheSuccessMessageDisplayed(ct2.message)

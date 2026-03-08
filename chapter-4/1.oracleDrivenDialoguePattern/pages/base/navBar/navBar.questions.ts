@@ -13,4 +13,11 @@ export default class NavBarQuestions {
         assertTs.equal(await this.elements.getTextLblLoggedIn(), expectedUser, 'O nome do usuário é diferente do esperado.')
     }
 
+    /**
+     * Método para validar se o botão [Login] da nav bar está sendo exibido
+     */
+    public async isLoginButtonDisplayedInNavbar() {
+        await assertTs.isTrue(await this.elements.waitForDisplayedBtnLoginMenu(), 'O botão [Login] não está sendo exibido.')
+    }
+
 }

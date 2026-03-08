@@ -25,10 +25,15 @@ export default class NavBarElements {
     /**
      * Mapeamento do botão [Signup/Login] da NavBar
      */
-    get btnLoginMenu() { return $(`${buttonBase.menuElement(4)}`) }
+    get btnLoginMenu() { return $(`${buttonBase.menuElement(4)} [href='/login']`) }
 
     /**
      * Mapeamento do texto com o nome do usuário logado
      */
     get lblLoggedIn() { return $('ul.nav i.fa-user + b') }
+
+    /**
+     * Mapeamento do botão [Logout] da NavBar
+     */
+    get btnLogoutMenu() { return $(`${buttonBase.menuElement(4)} [href='/logout']`) }
 }

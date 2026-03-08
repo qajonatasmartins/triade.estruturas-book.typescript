@@ -5,12 +5,6 @@ export default class NavBarInteractions {
 
     private elements = new NavBarElements()
 
-    protected clickBtnHomeMenu() { }
-
-    protected clickBtnProductsMenu() { }
-
-    protected clickBtnCartMenu() { }
-
     /**
      * Método para realizar o click no botão de [Login] da nav bar
      */
@@ -24,6 +18,20 @@ export default class NavBarInteractions {
      */
     public async getTextLblLoggedIn(): Promise<string> {
         return getTextCustomCommands.waitForDisplayedAndReturnText(this.elements.lblLoggedIn, 'O nome do usuário logado não foi exibido.')
+    }
+
+    /**
+     * Método para realizar o click no botão de [Logout] da nav bar
+     */
+    public async clickBtnLogoutMenu() {
+        await clickCustomCommands.waitForDisplayedAndClick(this.elements.btnLogoutMenu, 'O botão [Logout] não foi exibido.')
+    }
+
+    /**
+     * Método para aguardar o botão [Login] da nav bar ser exibido
+     */
+    public async waitForDisplayedBtnLoginMenu() {
+        return await this.elements.btnLoginMenu.waitForDisplayed({ timeoutMsg: 'O botão [Login] não foi exibido.' })
     }
 
 }

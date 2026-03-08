@@ -1,6 +1,7 @@
 export const feature = {
     login: 'Login',
-    footer: 'Footer'
+    footer: 'Footer',
+    logout: 'Logout'
 }
 
 export const severity = {

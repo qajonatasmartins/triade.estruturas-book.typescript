@@ -11,4 +11,11 @@ export default class NavBarActions {
         await this.interactions.clickBtnLoginMenu()
     }
 
+    /**
+     * Método para realizar o logout
+     */
+    public async logout() {
+        await this.interactions.clickBtnLogoutMenu()
+    }
+
 }
