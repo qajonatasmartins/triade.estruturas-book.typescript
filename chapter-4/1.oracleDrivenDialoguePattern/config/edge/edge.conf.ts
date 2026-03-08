@@ -9,11 +9,9 @@ export const config = {
 
     maxInstances: 10,
     capabilities: [{
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: [
-                'headless',
-                'disable-gpu']
+        browserName: 'msedge',
+        'ms:edgeOptions': {
+            args: ['--headless']
         }
     }],
     reporters: [
@@ -21,7 +19,7 @@ export const config = {
         [
             "allure",
             {
-                outputDir: path.resolve(process.cwd(), "reports/local/chrome/"),
+                outputDir: path.resolve(process.cwd(), "reports/local/msedge/"),
                 disableWebdriverStepsReporting: true,
                 disableWebdriverScreenshotsReporting: false,
                 reportedEnvironmentVars: {

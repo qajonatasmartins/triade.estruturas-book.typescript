@@ -9,11 +9,9 @@ export const config = {
 
     maxInstances: 10,
     capabilities: [{
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: [
-                'headless',
-                'disable-gpu']
+        browserName: 'firefox',
+        'moz:firefoxOptions': {
+            args: ['-headless']
         }
     }],
     reporters: [
@@ -21,7 +19,7 @@ export const config = {
         [
             "allure",
             {
-                outputDir: path.resolve(process.cwd(), "reports/local/chrome/"),
+                outputDir: path.resolve(process.cwd(), "reports/local/firefox/"),
                 disableWebdriverStepsReporting: true,
                 disableWebdriverScreenshotsReporting: false,
                 reportedEnvironmentVars: {
@@ -30,6 +28,7 @@ export const config = {
                     os_version: os.version(),
                     node_version: process.version,
                 },
+
             },
         ],
     ],

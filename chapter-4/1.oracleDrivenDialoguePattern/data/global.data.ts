@@ -1,10 +1,17 @@
-export const feature = {}
+export const feature = {
+    login: 'Login'
+}
 
-export const severity = {}
+export const severity = {
+    trivial: 'trivial',
+    minor: 'minor',
+    normal: 'normal',
+    critical: 'critical',
+    blocker: 'blocker'
+}
 
 export const productName = 'Automation Exercise'
 
 export const describeName = {
     footer: `${productName} - Footer`
-
 }
