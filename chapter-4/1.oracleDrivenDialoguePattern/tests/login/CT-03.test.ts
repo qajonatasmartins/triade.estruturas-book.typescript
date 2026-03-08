@@ -5,17 +5,14 @@ import { ct01 } from '../../data/login/login.data'
 
 describe(describeName.footer, async () => {
 
-    before('Pré-condição: Logar na aplicação', async () => {
-        /** Arrange */
-        await navBarActions.openLogin()
-        await loginActions.toLogin(ct01)
-    })
-
     it('[CT-03] - Realizar logout na plataforma', async () => {
         allure.addFeature(feature.logout)
         allure.addSeverity(severity.trivial)
         allure.addTag("@regression")
         allure.addLink(`${process.env.TEST_CASE_URL}/3`, "Test Case")
+        /** Arrange */
+        await navBarActions.openLogin()
+        await loginActions.toLogin(ct01)
         /**Act */
         await navBarActions.logout()
         /** Assert */

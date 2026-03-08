@@ -13,7 +13,12 @@ export const config = {
         'goog:chromeOptions': {
             args: [
                 'headless',
-                'disable-gpu']
+                'disable-gpu',
+                '--disable-extensions',
+                '--disable-infobars',
+                '--disable-popup-blocking',
+                '--disable-notifications'
+            ]
         }
     }],
     reporters: [
