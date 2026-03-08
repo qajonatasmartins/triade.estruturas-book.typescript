@@ -7,6 +7,8 @@ import LoginActions from "./pages/login/login.actions";
 import LoginQuestions from "./pages/login/login.questions";
 import NavBarQuestions from "./pages/base/navBar/navBar.questions";
 import NavBarActions from "./pages/base/navBar/navBar.actions";
+import SuccessActions from "./pages/base/success/success.actions";
+import SuccessQuestions from "./pages/base/success/success.questions";
 
 /** Asserções */
 export const assertTs = assert
@@ -21,8 +23,10 @@ export const labelBase = new LabelBase()
 export const navBarActions = new NavBarActions()
 export const loginActions = new LoginActions()
 export const footerActions = new FooterActions()
+export const successActions = new SuccessActions()
 
 /** Questions */
 export const navBarQuestions = new NavBarQuestions()
 export const loginQuestions = new LoginQuestions()
 export const footerQuestions = new FooterQuestions()
+export const successQuestions = new SuccessQuestions()

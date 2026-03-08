@@ -18,4 +18,11 @@ export default class NavBarActions {
         await this.interactions.clickBtnLogoutMenu()
     }
 
+    /**
+     * Método para deletar uma conta na plataforma
+     */
+    public async deleteAccount() {
+        await this.interactions.clickBtnDeleteAccountMenu()
+    }
+
 }

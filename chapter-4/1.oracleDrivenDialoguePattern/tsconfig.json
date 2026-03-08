@@ -2,6 +2,8 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "ESNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "target": "es2022",
     "lib": ["es2022", "dom"],
     "types": [
@@ -21,5 +23,12 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false
   },
-  "include": ["tests", "config/wdio.conf.ts", "pages", "enum", "data"]
+  "include": [
+    "tests",
+    "config/wdio.conf.ts",
+    "pages",
+    "enum",
+    "data",
+    "core-api"
+  ]
 }

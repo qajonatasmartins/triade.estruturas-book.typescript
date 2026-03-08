@@ -36,4 +36,9 @@ export default class NavBarElements {
      * Mapeamento do botão [Logout] da NavBar
      */
     get btnLogoutMenu() { return $(`${buttonBase.menuElement(4)} [href='/logout']`) }
+
+    /**
+     * Mapeamento do botão [Delete Account] da NavBar
+     */
+    get btnDeleteAccountMenu() { return $(`${buttonBase.menuElement(5)} [href='/delete_account']`) }
 }

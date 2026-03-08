@@ -34,4 +34,11 @@ export default class NavBarInteractions {
         return await this.elements.btnLoginMenu.waitForDisplayed({ timeoutMsg: 'O botão [Login] não foi exibido.' })
     }
 
+    /**
+     * Método para realizar o click no botão de [Delete Account] da nav bar
+     */
+    public async clickBtnDeleteAccountMenu() {
+        await clickCustomCommands.waitForDisplayedAndClick(this.elements.btnDeleteAccountMenu, 'O botão [Delete Account] não foi exibido.')
+    }
+
 }

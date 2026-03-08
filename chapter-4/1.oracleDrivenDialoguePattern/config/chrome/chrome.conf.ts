@@ -17,7 +17,8 @@ export const config = {
                 '--disable-extensions',
                 '--disable-infobars',
                 '--disable-popup-blocking',
-                '--disable-notifications'
+                '--disable-notifications',
+                '--start-maximized'
             ]
         }
     }],

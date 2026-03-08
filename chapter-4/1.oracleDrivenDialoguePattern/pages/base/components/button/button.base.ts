@@ -13,5 +13,9 @@ export default class ButtonBase {
     public btnSubmit() { return `[type="submit"]` }
 
 
+    /**
+     * Mapeamento base do botão de continue
+     */
+    public btnContinue() { return `[data-qa='continue-button']` }
 
 }

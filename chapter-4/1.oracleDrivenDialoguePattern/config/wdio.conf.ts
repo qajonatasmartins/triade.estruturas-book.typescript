@@ -169,6 +169,7 @@ export const config: WebdriverIO.Config = {
      */
     beforeTest: async function (test, context) {
         await browser.url(`${process.env.URL}`)
+        await browser.maximizeWindow()
     },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
