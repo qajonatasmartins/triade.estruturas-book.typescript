@@ -1,9 +1,9 @@
 import { footerActions, footerQuestions } from '../../constants'
-import { describeName, feature, severity } from '../../data/global.data'
+import { feature, productName, severity } from '../../data/global.data'
 import { ct2 } from '../../data/footer/footer.data'
 import { allure } from '../../core-web/constants'
 
-describe(describeName.footer, async () => {
+describe(productName, async () => {
 
     it('[CT-02] -  Validar o cadastro de e-mail na Subscription com sucesso', async () => {
         allure.addFeature(feature.footer)

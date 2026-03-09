@@ -9,6 +9,7 @@ import NavBarQuestions from "./pages/base/navBar/navBar.questions";
 import NavBarActions from "./pages/base/navBar/navBar.actions";
 import SuccessActions from "./pages/base/success/success.actions";
 import SuccessQuestions from "./pages/base/success/success.questions";
+import RegisterFlows from "./flows/register/register.flows";
 
 /** Asserções */
 export const assertTs = assert
@@ -30,3 +31,6 @@ export const navBarQuestions = new NavBarQuestions()
 export const loginQuestions = new LoginQuestions()
 export const footerQuestions = new FooterQuestions()
 export const successQuestions = new SuccessQuestions()
+
+/** Flows */
+export const registerFlows = new RegisterFlows()

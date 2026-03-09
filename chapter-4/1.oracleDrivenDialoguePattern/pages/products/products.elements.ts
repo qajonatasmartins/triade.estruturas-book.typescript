@@ -2,15 +2,15 @@ import { $ } from '@wdio/globals'
 
 export default class ProductsElements {
 
-    public get inputUsername() {
+    get inputUsername() {
         return $('#username');
     }
 
-    public get inputPassword() {
+    get inputPassword() {
         return $('#password');
     }
 
-    public get btnSubmit() {
+    get btnSubmit() {
         return $('button[type="submit"]');
     }
 

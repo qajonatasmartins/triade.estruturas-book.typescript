@@ -1,9 +1,9 @@
 import { loginActions, navBarActions, navBarQuestions } from '../../constants'
 import { allure } from '../../core-web/constants'
-import { describeName, feature, severity } from '../../data/global.data'
+import { productName, feature, severity } from '../../data/global.data'
 import { ct01 } from '../../data/login/login.data'
 
-describe(describeName.footer, async () => {
+describe(productName, async () => {
 
     it('[CT-01] - Realizar login com sucesso na plataforma', async () => {
         allure.addFeature(feature.login)

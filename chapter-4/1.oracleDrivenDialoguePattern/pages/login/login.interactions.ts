@@ -28,5 +28,27 @@ export default class LoginInteractions {
         await clickCustomCommands.waitForDisplayedAndClick(this.elements.btnLogin, 'O botão [Login] não foi exibido.')
     }
 
+    /**
+     * Método para informar o valor no campo 'Email adress' do New User Signup!
+     * @param email 
+     */
+    public async setInputEmailAddressSignup(email: string) {
+        await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputEmailAddressSignup, email, 'Email adress')
+    }
+
+    /**
+     * Método para informar o valor no campo 'Name' do New User Signup!
+     * @param name 
+     */
+    public async setInputName(name: string) {
+        await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputName, name, 'Name')
+    }
+
+    /**
+     * Método para realizar o click no botão [Signup] do New User Signup!
+     */
+    public async clickBtnSignup() {
+        await clickCustomCommands.waitForDisplayedAndClick(this.elements.btnSignup, 'O botão [Signup] não foi exibido.')
+    }
 
 }

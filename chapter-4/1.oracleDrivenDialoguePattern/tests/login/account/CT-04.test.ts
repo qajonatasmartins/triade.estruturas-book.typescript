@@ -3,9 +3,9 @@ import { ct04 } from '../../../data/login/account/account.data'
 import postCreateAccountService from '../../../core-api/src/service/account/postCreateAccount.service'
 import { loginActions, navBarActions, navBarQuestions, successQuestions } from '../../../constants'
 import { allure } from '../../../core-web/constants'
-import { feature, severity } from '../../../data/global.data'
+import { feature, productName, severity } from '../../../data/global.data'
 
-describe('Account', () => {
+describe(productName, () => {
 
     it('[CT-04] - Deletar uma conta na plataforma', async () => {
         allure.addFeature(feature.account)
@@ -16,8 +16,8 @@ describe('Account', () => {
         const account = createAccountBuilder
             .withName(ct04().name)
             .build()
-        /** Act */
         await postCreateAccountService(account, ct04().paramsDefault)
+        /** Act */
         await navBarActions.openLogin()
         await loginActions.toLogin(account)
         await navBarActions.deleteAccount()
