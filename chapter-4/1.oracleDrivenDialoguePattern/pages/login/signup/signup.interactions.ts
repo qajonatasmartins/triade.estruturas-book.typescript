@@ -1,4 +1,4 @@
-import { clickCustomCommands, setCustomCommands } from "../../../core-web/constants"
+import { clickCustomCommands, selectCustomCommands, setCustomCommands } from "../../../core-web/constants"
 import SignupElements from "./signup.elements"
 
 export default class SignupInteractions {
@@ -40,8 +40,7 @@ export default class SignupInteractions {
      * @param dateOfBirth - Valor para informar no campo 'Date of birth'
      */
     public async setInputDateOfBirth(dateOfBirth: number) {
-        await this.elements.inputDateOfBirth.waitForDisplayed({ timeoutMsg: 'O campo "Date of birth Day" não foi exibido.' })
-        await this.elements.inputDateOfBirth.selectByVisibleText(dateOfBirth.toString())
+        await selectCustomCommands.waitForDisplayedAndSelectByVisibleText(this.elements.inputDateOfBirth, dateOfBirth.toString(), 'O campo "Date of birth Day" não foi exibido.')
     }
 
     /**
@@ -50,7 +49,7 @@ export default class SignupInteractions {
      */
     public async setInputMonthOfBirth(monthOfBirth: number) {
         await this.elements.inputMonthOfBirth.waitForDisplayed({ timeoutMsg: 'O campo "Date of birth Month" não foi exibido.' })
-        await this.elements.inputMonthOfBirth.selectByIndex(monthOfBirth)
+        await selectCustomCommands.waitForDisplayedAndSelectByIndex(this.elements.inputMonthOfBirth, monthOfBirth, 'O campo "Date of birth Month" não foi exibido.')
     }
 
     /**
@@ -58,15 +57,13 @@ export default class SignupInteractions {
      * @param yearOfBirth - Valor para informar no campo 'Year of birth'
      */
     public async setInputYearOfBirth(yearOfBirth: number) {
-        await this.elements.inputYearOfBirth.waitForDisplayed({ timeoutMsg: 'O campo "Date of birth Year" não foi exibido.' })
-        await this.elements.inputYearOfBirth.selectByVisibleText(yearOfBirth.toString())
+        await selectCustomCommands.waitForDisplayedAndSelectByVisibleText(this.elements.inputYearOfBirth, yearOfBirth.toString(), 'O campo "Date of birth Year" não foi exibido.')
     }
 
     /**
      * Método para selecionar o checkbox 'Newsletter' do New User Signup!
      */
     public async clickCheckNewsletter() {
-        await this.elements.checkNewsletter.scrollIntoView()
         await clickCustomCommands.waitForDisplayedAndClick(this.elements.checkNewsletter, 'O checkbox [Newsletter] não foi exibido.')
     }
 
@@ -74,7 +71,6 @@ export default class SignupInteractions {
      * Método para selecionar o checkbox 'Special Offer' do New User Signup!
      */
     public async clickCheckSpecialOffer() {
-        await this.elements.checkSpecialOffer.scrollIntoView()
         await clickCustomCommands.waitForDisplayedAndClick(this.elements.checkSpecialOffer, 'O checkbox [Special Offer] não foi exibido.')
     }
 
@@ -83,7 +79,6 @@ export default class SignupInteractions {
      * @param firstName - Valor para informar no campo 'First Name'
      */
     public async setInputFirstName(firstName: string) {
-        await this.elements.inputFirstName.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputFirstName, firstName, 'First Name')
     }
 
@@ -92,7 +87,6 @@ export default class SignupInteractions {
      * @param lastName - Valor para informar no campo 'Last Name'
      */
     public async setInputLastName(lastName: string) {
-        await this.elements.inputLastName.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputLastName, lastName, 'Last Name')
     }
 
@@ -101,7 +95,6 @@ export default class SignupInteractions {
      * @param company - Valor para informar no campo 'Company'
      */
     public async setInputCompany(company: string) {
-        await this.elements.inputCompany.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputCompany, company, 'Company')
     }
 
@@ -110,7 +103,6 @@ export default class SignupInteractions {
      * @param address - Valor para informar no campo 'Address'
      */
     public async setInputAddress(address: string) {
-        await this.elements.inputAddress.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputAddress, address, 'Address')
     }
 
@@ -119,7 +111,6 @@ export default class SignupInteractions {
      * @param address2 - Valor para informar no campo 'Address 2'
      */
     public async setInputAddress2(address2: string) {
-        await this.elements.inputAddress2.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputAddress2, address2, 'Address 2')
     }
 
@@ -128,9 +119,7 @@ export default class SignupInteractions {
      * @param country - Valor para informar no campo 'Country'
      */
     public async setInputCountry(country: string) {
-        await this.elements.inputCountry.scrollIntoView()
-        await this.elements.inputCountry.waitForDisplayed({ timeoutMsg: 'O campo "Country" não foi exibido.' })
-        await this.elements.inputCountry.selectByVisibleText(country)
+        await selectCustomCommands.waitForDisplayedAndSelectByVisibleText(this.elements.inputCountry, country, 'O campo "Country" não foi exibido.')
     }
 
     /**
@@ -138,7 +127,6 @@ export default class SignupInteractions {
      * @param state - Valor para informar no campo 'State'
      */
     public async setInputState(state: string) {
-        await this.elements.inputState.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputState, state, 'State')
     }
 
@@ -147,7 +135,6 @@ export default class SignupInteractions {
      * @param city - Valor para informar no campo 'City'
      */
     public async setInputCity(city: string) {
-        await this.elements.inputCity.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputCity, city, 'City')
     }
 
@@ -156,7 +143,6 @@ export default class SignupInteractions {
      * @param zipCode - Valor para informar no campo 'Zip Code'
      */
     public async setInputZipCode(zipCode: string) {
-        await this.elements.inputZipCode.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputZipCode, zipCode, 'Zip Code')
     }
 
@@ -165,7 +151,6 @@ export default class SignupInteractions {
      * @param mobileNumber - Valor para informar no campo 'Mobile Number'
      */
     public async setInputMobileNumber(mobileNumber: string) {
-        await this.elements.inputMobileNumber.scrollIntoView()
         await setCustomCommands.waitForDisplayedAndSetValue(this.elements.inputMobileNumber, mobileNumber, 'Mobile Number')
     }
 
@@ -174,7 +159,6 @@ export default class SignupInteractions {
      * @returns - Promise com a resposta da requisição
      */
     public async clickBtnCreateAccount() {
-        await this.elements.btnCreateAccount.scrollIntoView()
         await clickCustomCommands.waitForDisplayedAndClick(this.elements.btnCreateAccount, 'O botão [Create Account] não foi exibido.')
     }
 }
