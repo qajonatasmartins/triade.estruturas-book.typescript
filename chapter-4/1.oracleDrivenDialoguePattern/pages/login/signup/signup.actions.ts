@@ -1,5 +1,5 @@
-import { titleTypeEnum } from "../../../enum/login/signup/signup.enum"
-import { IBirthday, ISignup, ISignupAddress, ISignupBasic } from "../../../interface/login/signup/ISignup.interface"
+import { titleTypeEnum } from "@/enum/login/signup/signup.enum"
+import { IBirthday, ISignup, ISignupAddress, ISignupBasic } from "@/interface/login/signup/ISignup.interface"
 import SignupInteractions from "./signup.interactions"
 
 export default class SignupActions {

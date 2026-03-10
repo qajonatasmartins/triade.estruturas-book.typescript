@@ -1,4 +1,4 @@
-import { assertTs } from "../../../constants";
+import { assertTs } from "@/constants";
 import FooterInteractions from "./footer.interactions";
 
 export default class FooterQuestions {

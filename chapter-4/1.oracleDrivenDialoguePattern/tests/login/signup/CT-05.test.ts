@@ -1,8 +1,8 @@
-import { createAccountBuilder } from '../../../core-api/src/constants'
-import { ct05 } from '../../../data/login/account/account.data'
-import { registerFlows, successMessagesQuestions } from '../../../constants'
-import { allure } from '../../../core-web/constants'
-import { feature, productName, severity } from '../../../data/global.data'
+import { createAccountBuilder } from '@/core-api/src/constants'
+import { ct05 } from '@/data/login/account/account.data'
+import { registerFlows, successMessagesQuestions } from '@/constants'
+import { allure } from '@/core-web/constants'
+import { feature, productName, severity } from '@/data/global.data'
 
 describe(productName, () => {
 

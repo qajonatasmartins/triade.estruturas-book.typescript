@@ -1,4 +1,4 @@
-import { titleTypeEnum } from "../../../enum/login/signup/signup.enum";
+import { titleTypeEnum } from "@/enum/login/signup/signup.enum";
 
 /**
  * Interface de informações de nascimento

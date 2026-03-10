@@ -1,4 +1,4 @@
-import { clickCustomCommands, setCustomCommands } from "../../core-web/constants";
+import { clickCustomCommands, setCustomCommands } from "@/core-web/constants";
 import LoginElements from "./login.elements";
 
 export default class LoginInteractions {

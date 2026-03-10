@@ -1,4 +1,4 @@
-import { buttonBase } from "../../../constants";
+import { buttonBase } from "@/constants";
 
 export default class NavBarElements {
 

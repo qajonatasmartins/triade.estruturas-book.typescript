@@ -1,5 +1,5 @@
-import { loginActions, navBarActions } from "../../constants"
-import { ISignup } from "../../interface/login/signup/ISignup.interface"
+import { loginActions, navBarActions } from "@/constants"
+import { ISignup } from "@/interface/login/signup/ISignup.interface"
 
 export default class RegisterFlows {
 

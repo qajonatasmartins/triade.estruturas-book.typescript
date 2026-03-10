@@ -1,4 +1,4 @@
-import { labelBase } from "../../../constants"
+import { labelBase } from "@/constants"
 
 export default class FooterElements {
 

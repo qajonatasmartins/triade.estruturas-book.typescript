@@ -1,4 +1,4 @@
-import { buttonBase, labelBase } from "../../../constants";
+import { buttonBase, labelBase } from "@/constants";
 
 export default class SuccessMessagesElements {
 

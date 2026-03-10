@@ -1,7 +1,7 @@
-import { loginActions, navBarActions, navBarQuestions } from '../../constants'
-import { allure } from '../../core-web/constants'
-import { productName, feature, severity } from '../../data/global.data'
-import { ct01 } from '../../data/login/login.data'
+import { loginActions, navBarActions, navBarQuestions } from '@/constants'
+import { allure } from '@/core-web/constants'
+import { productName, feature, severity } from '@/data/global.data'
+import { ct01 } from '@/data/login/login.data'
 
 describe(productName, async () => {
 

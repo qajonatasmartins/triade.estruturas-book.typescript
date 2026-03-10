@@ -1,4 +1,4 @@
-import { clickCustomCommands, getTextCustomCommands } from "../../../core-web/constants"
+import { clickCustomCommands, getTextCustomCommands } from "@/core-web/constants"
 import SuccessMessagesElements from "./successMessages.elements"
 
 export default class SuccessMessagesInteractions {

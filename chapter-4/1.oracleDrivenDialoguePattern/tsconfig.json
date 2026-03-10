@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "moduleResolution": "node",
     "module": "ESNext",
     "esModuleInterop": true,
@@ -24,11 +28,15 @@
     "noImplicitAny": false
   },
   "include": [
+    "constants.ts",
     "tests",
-    "config/wdio.conf.ts",
+    "config",
     "pages",
     "enum",
     "data",
-    "core-api"
+    "core-api",
+    "core-web",
+    "flows",
+    "interface"
   ]
 }

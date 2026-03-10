@@ -1,8 +1,8 @@
 import { faker } from "@faker-js/faker";
-import { preSetup } from "../../../core-api/src/constants";
-import { ICreateAccount } from "../../../core-api/src/interface/account/ICreateAccount.interface";
-import { titleTypeEnum } from "../../../enum/login/signup/signup.enum";
-import { ISignup } from "../../../interface/login/signup/ISignup.interface";
+import { preSetup } from "@/core-api/src/constants";
+import { ICreateAccount } from "@/core-api/src/interface/account/ICreateAccount.interface";
+import { titleTypeEnum } from "@/enum/login/signup/signup.enum";
+import { ISignup } from "@/interface/login/signup/ISignup.interface";
 
 export const ct04 = () => {
     const testCase = 'CT-04'

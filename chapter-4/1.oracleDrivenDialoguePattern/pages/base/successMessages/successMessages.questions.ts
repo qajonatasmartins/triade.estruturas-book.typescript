@@ -1,4 +1,4 @@
-import { assertTs } from "../../../constants"
+import { assertTs } from "@/constants"
 import SuccessMessagesInteractions from "./successMessages.interactions"
 
 export default class SuccessMessagesQuestions {

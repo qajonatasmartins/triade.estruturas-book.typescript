@@ -1,4 +1,4 @@
-import { clickCustomCommands, getTextCustomCommands, setCustomCommands } from "../../../core-web/constants";
+import { clickCustomCommands, getTextCustomCommands, setCustomCommands } from "@/core-web/constants";
 import FooterElements from "./footer.elements";
 
 export default class FooterInteractions {

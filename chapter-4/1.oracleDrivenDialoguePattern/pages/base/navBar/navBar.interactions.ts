@@ -1,4 +1,4 @@
-import { clickCustomCommands, getTextCustomCommands } from "../../../core-web/constants";
+import { clickCustomCommands, getTextCustomCommands } from "@/core-web/constants";
 import NavBarElements from "./navBar.elements";
 
 export default class NavBarInteractions {

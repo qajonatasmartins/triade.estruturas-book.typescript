@@ -1,4 +1,4 @@
-import { assertTs } from "../../../constants";
+import { assertTs } from "@/constants";
 import NavBarInteractions from "./navBar.interactions";
 
 export default class NavBarQuestions {

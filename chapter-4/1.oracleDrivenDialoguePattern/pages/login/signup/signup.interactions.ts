@@ -1,4 +1,4 @@
-import { clickCustomCommands, selectCustomCommands, setCustomCommands } from "../../../core-web/constants"
+import { clickCustomCommands, selectCustomCommands, setCustomCommands } from "@/core-web/constants"
 import SignupElements from "./signup.elements"
 
 export default class SignupInteractions {

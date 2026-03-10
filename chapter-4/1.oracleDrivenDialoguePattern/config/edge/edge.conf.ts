@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import { config as sharedConfig } from "../wdio.conf"
+import { config as sharedConfig } from "@/config/wdio.conf"
 import path from 'node:path';
 import os from 'node:os';
 dotenv.config({ path: '.env', quiet: true });
