@@ -1,6 +1,6 @@
 import { createAccountBuilder } from '@/core-api/src/constants'
 import { ct05 } from '@/data/login/account/account.data'
-import { registerFlows, successMessagesQuestions } from '@/constants'
+import { accountBusiness, registerFlows, successMessagesQuestions } from '@/constants'
 import { allure } from '@/core-web/constants'
 import { feature, productName, severity } from '@/data/global.data'
 
@@ -22,5 +22,6 @@ describe(productName, () => {
         await successMessagesQuestions.whatIsTheTitleSuccessOfDeleteOrCreateAccount(ct05().title)
         await successMessagesQuestions.whatIsTheFirstParagraphSuccessOfDeleteOrCreateAccount(ct05().firstParagraph)
         await successMessagesQuestions.whatIsTheSecondParagraphSuccessOfDeleteOrCreateAccount(ct05().secondParagraph)
+        await accountBusiness.areAccountDataEqualToRegistration(account, ct05().paramsDefault)
     })
 })

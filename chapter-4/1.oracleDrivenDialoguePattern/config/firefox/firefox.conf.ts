@@ -13,12 +13,9 @@ export const config = {
         'moz:firefoxOptions': {
             args: ['-headless'],
             prefs: {
-                // Bloqueia janelas pop-up
                 'dom.disable_open_during_load': true,
-                // Ativa a proteção contra rastreamento (ajuda a barrar alguns ads)
                 'privacy.trackingprotection.enabled': true,
                 'privacy.trackingprotection.pbmode.enabled': true,
-                // Desativa notificações (que muitas vezes parecem ads)
                 'permissions.default.desktop-notification': 2,
             }
         }

@@ -10,6 +10,7 @@ import NavBarActions from "@/pages/base/navBar/navBar.actions";
 import SuccessMessagesActions from "@/pages/base/successMessages/successMessages.actions";
 import SuccessMessagesQuestions from "@/pages/base/successMessages/successMessages.questions";
 import RegisterFlows from "@/flows/register/register.flows";
+import AccountBusiness from "@/core-api/src/business/account/account.business";
 
 /** Asserções */
 export const assertTs = assert
@@ -34,3 +35,6 @@ export const footerQuestions = new FooterQuestions()
 
 /** Flows */
 export const registerFlows = new RegisterFlows()
+
+/** Business */
+export const accountBusiness = new AccountBusiness()
