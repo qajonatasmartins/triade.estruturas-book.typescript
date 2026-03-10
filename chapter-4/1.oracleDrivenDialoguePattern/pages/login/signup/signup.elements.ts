@@ -103,5 +103,5 @@ export default class SignupElements {
     /**
      * Mapeamento do botão de [Create Account] do New User Signup!
      */
-    get btnCreateAccount() { return $('[data-qa="create-account"]'); }
+    get btnCreateAccount() { return $('form button[data-qa="create-account"]'); }
 }
