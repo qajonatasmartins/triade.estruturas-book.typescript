@@ -1,9 +1,9 @@
 import { clickCustomCommands, getTextCustomCommands } from "../../../core-web/constants"
-import SuccessElements from "./success.elements"
+import SuccessMessagesElements from "./successMessages.elements"
 
-export default class SuccessInteractions {
+export default class SuccessMessagesInteractions {
 
-    private elements = new SuccessElements()
+    private elements = new SuccessMessagesElements()
 
     /**
      * Método para realizar o click no botão de [Continue] da página de sucesso (para exclusão e criação de conta)

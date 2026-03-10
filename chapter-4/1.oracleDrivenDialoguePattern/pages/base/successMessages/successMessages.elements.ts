@@ -1,6 +1,6 @@
 import { buttonBase, labelBase } from "../../../constants";
 
-export default class SuccessElements {
+export default class SuccessMessagesElements {
 
     /**
      * Mapeamento do título de sucesso da página de sucesso (para exclusão ou criação de conta)

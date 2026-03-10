@@ -7,8 +7,8 @@ import LoginActions from "./pages/login/login.actions";
 import LoginQuestions from "./pages/login/login.questions";
 import NavBarQuestions from "./pages/base/navBar/navBar.questions";
 import NavBarActions from "./pages/base/navBar/navBar.actions";
-import SuccessActions from "./pages/base/success/success.actions";
-import SuccessQuestions from "./pages/base/success/success.questions";
+import SuccessMessagesActions from "./pages/base/successMessages/successMessages.actions";
+import SuccessMessagesQuestions from "./pages/base/successMessages/successMessages.questions";
 import RegisterFlows from "./flows/register/register.flows";
 
 /** Asserções */
@@ -19,18 +19,18 @@ export const expectTs = { expect }
 /** Base Components */
 export const buttonBase = new ButtonBase()
 export const labelBase = new LabelBase()
+export const successMessagesActions = new SuccessMessagesActions()
+export const successMessagesQuestions = new SuccessMessagesQuestions()
 
 /** Actions */
 export const navBarActions = new NavBarActions()
 export const loginActions = new LoginActions()
 export const footerActions = new FooterActions()
-export const successActions = new SuccessActions()
 
 /** Questions */
 export const navBarQuestions = new NavBarQuestions()
 export const loginQuestions = new LoginQuestions()
 export const footerQuestions = new FooterQuestions()
-export const successQuestions = new SuccessQuestions()
 
 /** Flows */
 export const registerFlows = new RegisterFlows()

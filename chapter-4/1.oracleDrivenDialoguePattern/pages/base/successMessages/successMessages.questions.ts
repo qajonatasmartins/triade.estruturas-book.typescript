@@ -1,9 +1,9 @@
 import { assertTs } from "../../../constants"
-import SuccessInteractions from "./success.interactions"
+import SuccessMessagesInteractions from "./successMessages.interactions"
 
-export default class SuccessQuestions {
+export default class SuccessMessagesQuestions {
 
-    private interactions = new SuccessInteractions()
+    private interactions = new SuccessMessagesInteractions()
 
     /**
      * Método para validar se o título de sucesso da página de sucesso (para exclusão ou criação de conta) foi exibido

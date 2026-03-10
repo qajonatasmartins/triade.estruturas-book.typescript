@@ -1,6 +1,6 @@
 import { createAccountBuilder } from '../../../core-api/src/constants'
 import { ct05 } from '../../../data/login/account/account.data'
-import { registerFlows, successQuestions } from '../../../constants'
+import { registerFlows, successMessagesQuestions } from '../../../constants'
 import { allure } from '../../../core-web/constants'
 import { feature, productName, severity } from '../../../data/global.data'
 
@@ -19,8 +19,8 @@ describe(productName, () => {
         const signup = ct05().user(account)
         await registerFlows.registerAccount(signup)
         /** Assert */
-        await successQuestions.whatIsTheTitleSuccessOfDeleteOrCreateAccount(ct05().title)
-        await successQuestions.whatIsTheFirstParagraphSuccessOfDeleteOrCreateAccount(ct05().firstParagraph)
-        await successQuestions.whatIsTheSecondParagraphSuccessOfDeleteOrCreateAccount(ct05().secondParagraph)
+        await successMessagesQuestions.whatIsTheTitleSuccessOfDeleteOrCreateAccount(ct05().title)
+        await successMessagesQuestions.whatIsTheFirstParagraphSuccessOfDeleteOrCreateAccount(ct05().firstParagraph)
+        await successMessagesQuestions.whatIsTheSecondParagraphSuccessOfDeleteOrCreateAccount(ct05().secondParagraph)
     })
 })

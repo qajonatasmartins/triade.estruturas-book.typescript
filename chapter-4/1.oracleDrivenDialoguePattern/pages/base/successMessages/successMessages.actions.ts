@@ -1,8 +1,8 @@
-import SuccessInteractions from "./success.interactions"
+import SuccessMessagesInteractions from "./successMessages.interactions"
 
-export default class SuccessActions {
+export default class SuccessMessagesActions {
 
-    private interactions = new SuccessInteractions()
+    private interactions = new SuccessMessagesInteractions()
 
     /**
      * Método para continuar a ação na página de sucesso (para exclusão ou criação de conta)
