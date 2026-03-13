@@ -1,0 +1,14 @@
+---
+description: Regras para arquivos .builder.ts (object builders)
+globs: **/*.builder.ts
+alwaysApply: false
+---
+
+# Builders
+
+- Classe com `export default class [Nome]Builder`
+- Constructor inicializa objeto com valores default (usar faker quando apropriado)
+- Métodos `with[Nome](valor): [Nome]Builder` retornam `this` para encadeamento
+- Método `build(): IInterface` retorna o objeto final
+- Implementar interface correspondente de `@/core-api/src/interface/`
+- JSDoc em cada método with* e build

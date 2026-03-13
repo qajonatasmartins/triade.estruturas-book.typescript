@@ -17,6 +17,11 @@ export default class LoginElements {
      * Mapeamento do botão de [Login] do login to your account
      */
     get btnLogin() { return $(`[data-qa="login-button"]${buttonBase.btnSubmit()}`); }
+
+    /**
+     * Mapeamento da mensagem de erro de credenciais incorretas (Your email or password is incorrect!)
+     */
+    get lblLoginErrorMessage() { return $("input[data-qa='login-password'] + p"); }
     //#endregion
 
     //#region Signup
@@ -34,5 +39,10 @@ export default class LoginElements {
      * Mapeamento do botão de [Signup] do New User Signup!
      */
     get btnSignup() { return $(`[data-qa="signup-button"]${buttonBase.btnSubmit()}`); }
+
+    /**
+     * Mapeamento da mensagem de erro 'Email Address already exist!' do New User Signup!
+     */
+    get lblSignupErrorMessage() { return $('input[data-qa="signup-email"] ~ p'); }
     //#endregion
 }

@@ -1,0 +1,15 @@
+---
+description: Regras para arquivos .business.ts (lógica de validação via API)
+globs: **/*.business.ts
+alwaysApply: false
+---
+
+# Business Logic (Oracle)
+
+- Classe com `export default class [Nome]Business`
+- Métodos públicos async que validam dados via services
+- Importar services de `@/core-api/src/service/`
+- Usar `assertTs` de `@/constants` para comparações (equal, isTrue, etc.)
+- Chamar services e comparar resposta com dados esperados
+- JSDoc obrigatório com @param, @returns
+- Mensagens de erro em português

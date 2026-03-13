@@ -1,0 +1,15 @@
+---
+description: Regras para arquivos .service.ts (chamadas à API)
+globs: **/*.service.ts
+alwaysApply: false
+---
+
+# API Services
+
+- Função async default export: `export default async function [nome]Service(params)`
+- Usar `pactum` para requests
+- `.withHeaders()`, `.withQueryParams()` ou `.withForm()` conforme método
+- `.expectStatus(paramsDefault.statusCode, mensagemEmPortugues)`
+- `.retry({ count, delay, strategy })` com paramsDefault.retry
+- Interface `IParamsDefault` de `@/core-api/src/interface/IParamsDefault.interface`
+- Nome do arquivo: camelCase (ex: getUserDetailByEmail.service.ts)

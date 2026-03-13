@@ -1,0 +1,14 @@
+---
+description: Regras para arquivos .data.ts (dados de teste)
+globs: **/*.data.ts
+alwaysApply: false
+---
+
+# Test Data
+
+- Funções exportadas nomeadas: `export const ct[Nn] = () => ({ ... })`
+- Retornar objeto com dados do cenário de teste
+- Usar `faker` para dados dinâmicos quando apropriado
+- `paramsDefault` via `preSetup.preSetupParamsDefault(statusCode, retryCount, retryDelay)` de `@/core-api/src/constants`
+- Funções podem receber parâmetros (ex: `user: (account) => ISignup`)
+- Organizar em `data/[domínio]/[feature].data.ts`

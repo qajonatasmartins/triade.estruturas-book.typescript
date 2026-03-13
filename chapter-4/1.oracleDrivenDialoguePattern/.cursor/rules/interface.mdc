@@ -1,0 +1,14 @@
+---
+description: Regras para arquivos .interface.ts (TypeScript interfaces)
+globs: **/*.interface.ts
+alwaysApply: false
+---
+
+# Interfaces
+
+- Prefixo `I` no nome: `I[Nome]`
+- `export interface I[Nome] { ... }`
+- Props com tipos explícitos; usar `?` para opcionais
+- Interfaces compostas com `extends` quando fizer sentido
+- Sem métodos; apenas contratos de dados
+- Organizar em `interface/[domínio]/I[Nome].interface.ts`

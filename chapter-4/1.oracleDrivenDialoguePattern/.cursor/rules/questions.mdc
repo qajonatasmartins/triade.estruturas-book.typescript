@@ -1,0 +1,15 @@
+---
+description: Regras para arquivos .questions.ts (validações/oracles)
+globs: **/*.questions.ts
+alwaysApply: false
+---
+
+# Page Questions
+
+- Classe com `export default class [Nome]Questions`
+- Usar `Interactions` internamente: `private interactions = new [Nome]Interactions()`
+- Usar `assertTs` de `@/constants` para assertions
+- Métodos públicos async: `whatIs[Nome]`, `is[Nome]Displayed`, etc.
+- Métodos retornam Promise; assertions com mensagens de erro em português
+- JSDoc obrigatório em cada método
+- Não realizar ações; apenas validar estado (oracle-driven)

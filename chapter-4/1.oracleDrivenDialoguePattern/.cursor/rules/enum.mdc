@@ -1,0 +1,13 @@
+---
+description: Regras para arquivos .enum.ts (enumeradores)
+globs: **/*.enum.ts
+alwaysApply: false
+---
+
+# Enums
+
+- `export enum [nome]Enum { ... }`
+- Sufixo `Enum` no nome
+- Valores em PascalCase para chaves, strings ou números para valores
+- Organizar em `enum/[domínio]/[nome].enum.ts`
+- Usar em interfaces e actions quando valores fixos

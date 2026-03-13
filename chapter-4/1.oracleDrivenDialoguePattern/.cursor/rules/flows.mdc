@@ -1,0 +1,14 @@
+---
+description: Regras para arquivos .flows.ts (fluxos de usuário)
+globs: **/*.flows.ts
+alwaysApply: false
+---
+
+# User Flows
+
+- Classe com `export default class [Nome]Flows`
+- Orquestrar `Actions` de múltiplas páginas via `@/constants`
+- Métodos públicos async que compõem fluxos de usuário completos
+- Importar `navBarActions`, `loginActions`, etc. de `@/constants`
+- JSDoc obrigatório descrevendo o fluxo passo a passo
+- Um método por fluxo principal

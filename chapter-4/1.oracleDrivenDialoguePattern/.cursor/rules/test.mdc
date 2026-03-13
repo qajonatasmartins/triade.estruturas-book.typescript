@@ -1,0 +1,16 @@
+---
+description: Regras para arquivos .test.ts (testes WebdriverIO)
+globs: **/*.test.ts
+alwaysApply: false
+---
+
+# Test Files
+
+- `describe(productName, () => { ... })` - usar `productName` de `@/data/global.data`
+- `it('[CT-NN] - Descrição do cenário', async () => { ... })`
+- Padrão AAA: `/** Arrange */`, `/** Act */`, `/** Assert */`
+- Arrange: builders, data (ctNN()), signup/account
+- Act: flows ou actions
+- Assert: questions (whatIs*, is*), business (validação via API)
+- Allure: `allure.addFeature()`, `allure.addSeverity()`, `allure.addTag()`, `allure.addLink()`
+- Organizar em `tests/[feature]/[CT-NN].test.ts` ou `tests/[feature]/[subfeature]/CT-NN.test.ts`

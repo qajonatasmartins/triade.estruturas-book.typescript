@@ -1,0 +1,13 @@
+---
+description: Regras para arquivos .base.ts (componentes base reutilizáveis)
+globs: **/*.base.ts
+alwaysApply: false
+---
+
+# Base Components
+
+- Classe com `export default class [Nome]Base`
+- Métodos que retornam seletores reutilizáveis (strings ou funções com parâmetros)
+- Usar template literals para seletores dinâmicos: `` `.selector-${index}` ``
+- JSDoc descrevendo o mapeamento base
+- Localizar em `pages/base/components/[nome]/[nome].base.ts`

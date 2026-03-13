@@ -1,0 +1,13 @@
+---
+description: Regras para arquivos .elements.ts (mapeamento de elementos)
+globs: **/*.elements.ts
+alwaysApply: false
+---
+
+# Page Elements
+
+- Classe com `export default class [Nome]Elements`
+- Cada elemento: getter `get nomeDescritivo()` retornando `$("seletor")` ou `$('#id')`
+- JSDoc obrigatório em cada getter: `/** Mapeamento do [elemento] do [contexto] */`
+- Nomenclatura: `check[Nome]` para checkboxes, `input[Nome]` para inputs, `btn[Nome]` para botões
+- Usar seletores WebdriverIO: `$()`, `$$()`, preferir atributos data-qa quando existirem

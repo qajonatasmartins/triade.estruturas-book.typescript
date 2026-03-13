@@ -1,0 +1,14 @@
+---
+description: Regras para arquivos .interactions.ts (interações de baixo nível)
+globs: **/*.interactions.ts
+alwaysApply: false
+---
+
+# Page Interactions
+
+- Classe com `export default class [Nome]Interactions`
+- Usar `Elements` internamente: `private elements = new [Nome]Elements()`
+- Usar custom commands: `clickCustomCommands`, `setCustomCommands`, `selectCustomCommands`, `getTextCustomCommands` de `@/core-web/constants`
+- Métodos públicos async: `click[Nome]`, `setInput[Nome]`, `getText[Nome]`, etc.
+- Sempre usar `waitForDisplayed` antes de interações; passar mensagem de timeout em português
+- JSDoc obrigatório em cada método

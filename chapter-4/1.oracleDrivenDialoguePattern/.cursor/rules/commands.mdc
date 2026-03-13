@@ -1,0 +1,14 @@
+---
+description: Regras para arquivos .commands.ts (custom commands WebdriverIO)
+globs: **/*.commands.ts
+alwaysApply: false
+---
+
+# Custom Commands
+
+- Classe com `export default class [Nome]CustomCommands`
+- Métodos públicos async que encapsulam operações WebdriverIO
+- Receber `element: ReturnType<WebdriverIO.Browser["$"]>` ou `$$`
+- Padrão: `waitForDisplayed` antes da ação; `timeoutMsg` em português
+- Localizar em `core-web/commands/[nome].commands.ts`
+- Exportar instância em `core-web/constants.ts`

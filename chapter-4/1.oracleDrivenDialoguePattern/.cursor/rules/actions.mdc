@@ -1,0 +1,14 @@
+---
+description: Regras para arquivos .actions.ts (ações de alto nível)
+globs: **/*.actions.ts
+alwaysApply: false
+---
+
+# Page Actions
+
+- Classe com `export default class [Nome]Actions`
+- Usar `Interactions` internamente: `private interactions = new [Nome]Interactions()`
+- Métodos públicos async para orquestrar ações de negócio
+- JSDoc obrigatório: `@param`, `@returns` quando aplicável
+- Importar interfaces de `@/interface/` e enums de `@/enum/`
+- Não acessar elementos diretamente; delegar sempre às interactions

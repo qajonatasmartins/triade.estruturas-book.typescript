@@ -1,0 +1,13 @@
+---
+description: Regras para arquivos .utils.ts
+globs: **/*.utils.ts
+alwaysApply: false
+---
+
+# Utils
+
+- Classe com `export default class [Nome]Utils` ou funções puras
+- Métodos/funções utilitárias reutilizáveis
+- Sem dependências de UI; apenas lógica
+- JSDoc em métodos públicos
+- Localizar em `core-api/src/utils/` ou conforme domínio

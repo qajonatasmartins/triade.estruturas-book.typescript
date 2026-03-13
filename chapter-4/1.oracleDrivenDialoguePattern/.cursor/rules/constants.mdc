@@ -1,0 +1,13 @@
+---
+description: Regras para constants.ts (barrel de exportação)
+globs: constants.ts
+alwaysApply: false
+---
+
+# Constants (Barrel)
+
+- Exportar `assertTs`, `shouldTs`, `expectTs` de chai
+- Exportar instâncias de Actions, Questions, Flows, Business
+- Exportar base components quando usados globalmente
+- Importar de paths `@/pages/`, `@/flows/`, `@/core-api/`
+- Manter ordem: Asserções, Base Components, Actions, Questions, Flows, Business

@@ -1,4 +1,4 @@
-import { clickCustomCommands, setCustomCommands } from "@/core-web/constants";
+import { clickCustomCommands, getTextCustomCommands, setCustomCommands } from "@/core-web/constants";
 import LoginElements from "./login.elements";
 
 export default class LoginInteractions {
@@ -29,6 +29,13 @@ export default class LoginInteractions {
     }
 
     /**
+     * Método para obter o texto da mensagem de erro de credenciais incorretas
+     */
+    public async getTextLblLoginErrorMessage() {
+        return await getTextCustomCommands.waitForDisplayedAndReturnText(this.elements.lblLoginErrorMessage, 'A mensagem de erro de login não foi exibida.')
+    }
+
+    /**
      * Método para informar o valor no campo 'Email adress' do New User Signup!
      * @param email 
      */
@@ -49,6 +56,16 @@ export default class LoginInteractions {
      */
     public async clickBtnSignup() {
         await clickCustomCommands.waitForDisplayedAndClick(this.elements.btnSignup, 'O botão [Signup] não foi exibido.')
+    }
+
+    /**
+     * Método para obter o texto da mensagem de erro 'Email Address already exist!' do signup
+     */
+    public async getTextLblSignupErrorMessage() {
+        return await getTextCustomCommands.waitForDisplayedAndReturnText(
+            this.elements.lblSignupErrorMessage,
+            'A mensagem de erro de signup não foi exibida.'
+        )
     }
 
 }
