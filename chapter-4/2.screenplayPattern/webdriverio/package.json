@@ -25,9 +25,10 @@
   },
   "scripts": {
     "postinstall": "serenity-bdd update",
-    "serenity": "failsafe serenity:clean wdio serenity:report",
+    "serenity": "failsafe serenity:clean wdio:chrome serenity:report",
     "serenity:clean": "rimraf target",
-    "wdio": "wdio run ./wdio.conf.ts",
+    "wdio:chrome": "wdio run ./config/chrome/chrome.conf.ts",
+    "wdio:firefox": "wdio run ./config/firefox/firefox.conf.ts",
     "serenity:report": "serenity-bdd run",
     "serenity:open": "npm run serenity:report && npx open-cli ./target/site/serenity/index.html",
     "start": "mkdirp ./target/site/serenity && npx http-server -p 8080 ./target/site/serenity -s -o"

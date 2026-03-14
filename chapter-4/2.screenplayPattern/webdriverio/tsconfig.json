@@ -35,12 +35,11 @@
   },
   "include": [
     "tests",
-    "wdio.conf.ts",
+    "config",
     "data",
     "screenplay",
     "builder",
     "interface",
-    "screenplay",
     "tests"
   ]
 }
