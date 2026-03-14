@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/data/*": ["data/*"],
+      "@/builder/*": ["builder/*"],
+      "@/interface/*": ["interface/*"],
+      "@/screenplay/*": ["screenplay/*"],
+      "@/tests/*": ["tests/*"],
+      "@/ui/*": ["screenplay/automationpratice/ui/*.ts"],
+      "@/questions/*": ["screenplay/automationpratice/question/*.ts"],
+      "@/tasks/*": ["screenplay/automationpratice/task/*.ts"],
+      "@/api/*": ["screenplay/automationpratice/api/*.ts"],
+      "@/actors/*": ["screenplay/automationpratice/actor/*.ts"],
+      "@/ability/*": ["screenplay/automationpratice/ability/*.ts"]
+    },
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "es2022",
+    "lib": ["es2022", "dom"],
+    "types": ["node", "@wdio/globals/types", "expect-webdriverio", "mocha"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false
+  },
+  "include": [
+    "tests",
+    "wdio.conf.ts",
+    "data",
+    "screenplay",
+    "builder",
+    "interface",
+    "screenplay",
+    "tests"
+  ]
+}
