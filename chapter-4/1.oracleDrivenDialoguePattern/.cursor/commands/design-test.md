@@ -28,20 +28,20 @@ Se a página for nova ou os arquivos `.elements.ts` não existirem:
 
 Para cada tipo de arquivo, verificar se já existe. Se não existir, usar a skill correspondente em `.cursor/skills/`:
 
-| Ordem | Skill | Quando usar |
-|-------|-------|-------------|
-| 1 | map-elements-wdio-mcp (prioritário) / create-elements | Elements inexistentes |
-| 2 | create-interactions | Depende de elements |
-| 3 | create-actions | Depende de interactions |
-| 4 | create-questions | Validação UI |
-| 5 | create-flows | Fluxo multi-página |
-| 6 | create-service | Validação API (usar curl se fornecido) |
-| 7 | create-business | Validação via API |
-| 8 | create-data | Cenário ctNN |
-| 9 | create-builder | Builder novo |
-| 10 | create-interface | Interface nova |
-| 11 | create-test | Arquivo do teste |
-| 12 | create-constants | Atualizar barrel e global.data |
+| Ordem | Skill                                 | Quando usar                                |
+|-------|---------------------------------------|--------------------------------------------|
+|  1    | map-elements-wdio-mcp / create-elements | Quando elements não existem                 |
+|  2    | create-interactions                   | Quando depende de elements                 |
+|  3    | create-actions                        | Quando depende de interactions             |
+|  4    | create-questions                      | Para validação de UI                       |
+|  5    | create-flows                          | Para fluxo entre múltiplas páginas         |
+|  6    | create-service                        | Para validação de API (usar curl se houver)|
+|  7    | create-business                       | Para validação via API                     |
+|  8    | create-data                           | Para cenários ctNN                         |
+|  9    | create-builder                        | Quando um novo builder é necessário        |
+| 10    | create-interface                      | Quando uma nova interface é necessária     |
+| 11    | create-test                           | Para criar o arquivo de teste              |
+| 12    | create-constants                      | Atualizar barrel e global.data             |
 
 ## 4. Padrão AAA e estrutura do teste
 
