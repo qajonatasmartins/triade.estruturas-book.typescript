@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "wdiox-usage": {
+      "source": "winify/webdriverio-execute",
+      "sourceType": "github",
+      "computedHash": "f6d751a44055dc5b1941cbe608a0e36da4a351b99aef729d1c3c02dcbd1d2514"
+    }
+  }
+}
