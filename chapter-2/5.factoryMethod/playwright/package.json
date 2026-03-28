@@ -1,0 +1,16 @@
+{
+  "name": "factory-method-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:e2e": "start-server-and-test \"npm --prefix ../app run start\" http://localhost:3333 \"playwright test\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.1",
+    "@types/node": "^22.10.0",
+    "dotenv": "^17.2.4",
+    "start-server-and-test": "^2.0.8"
+  }
+}

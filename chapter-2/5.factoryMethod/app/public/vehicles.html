@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Veículos — Factory Method</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <h1>Demo: Veículo → Carro ou Moto</h1>
+        <p class="muted">
+          Cada tipo consulta a API e preenche o painel. Os testes usam uma fábrica para obter o
+          objeto certo (Carro ou Moto).
+        </p>
+        <p><a href="/">← Início</a></p>
+      </header>
+      <div class="card">
+        <h2>Selecione o veículo</h2>
+        <div class="row">
+          <button type="button" id="btn-carro" data-testid="select-carro">Carro</button>
+          <button type="button" id="btn-moto" data-testid="select-moto" class="secondary">
+            Moto
+          </button>
+        </div>
+        <div class="result" id="vehicle-panel" data-testid="vehicle-panel">
+          <p class="muted" id="vehicle-placeholder">Clique em Carro ou Moto.</p>
+          <p id="vehicle-rotulo" data-testid="vehicle-rotulo" class="hidden"></p>
+          <p id="vehicle-rodas" data-testid="vehicle-rodas" class="hidden"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      async function loadVehicle(type) {
+        const res = await fetch('/api/vehicle/' + encodeURIComponent(type));
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Erro');
+        document.getElementById('vehicle-placeholder').classList.add('hidden');
+        const rotulo = document.getElementById('vehicle-rotulo');
+        const rodas = document.getElementById('vehicle-rodas');
+        rotulo.textContent = data.rotulo;
+        rotulo.classList.remove('hidden');
+        rodas.textContent = 'Rodas: ' + data.rodas;
+        rodas.classList.remove('hidden');
+      }
+      document.getElementById('btn-carro').addEventListener('click', () => loadVehicle('carro'));
+      document.getElementById('btn-moto').addEventListener('click', () => loadVehicle('moto'));
+    </script>
+  </body>
+</html>

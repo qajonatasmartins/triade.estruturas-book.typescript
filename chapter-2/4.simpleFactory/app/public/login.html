@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login — Factory Method</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <h1>Login unificado</h1>
+        <p class="muted">
+          Cliente e administrador na mesma tela; campos e botões mudam conforme o perfil. Credenciais
+          de demo: <strong>user</strong>/<strong>user123</strong> e
+          <strong>admin</strong>/<strong>admin123</strong>.
+        </p>
+        <p><a href="/">← Início</a></p>
+      </header>
+      <div class="card">
+        <h2>Perfil</h2>
+        <div class="tabs">
+          <button type="button" id="tab-client" data-testid="tab-client">Cliente</button>
+          <button type="button" id="tab-admin" class="secondary" data-testid="tab-admin">
+            Administrador
+          </button>
+        </div>
+
+        <div id="form-client" data-testid="form-client">
+          <div class="field">
+            <label for="user">Usuário</label>
+            <input id="user" name="user" autocomplete="username" />
+          </div>
+          <div class="field">
+            <label for="pass">Senha</label>
+            <input id="pass" name="pass" type="password" autocomplete="current-password" />
+          </div>
+          <button type="button" id="btn-login" data-testid="btn-login">Entrar como cliente</button>
+        </div>
+
+        <div id="form-admin" class="hidden" data-testid="form-admin">
+          <div class="field">
+            <label for="admin-field">Identificador admin</label>
+            <input id="admin-field" name="admin-field" autocomplete="username" />
+          </div>
+          <div class="field">
+            <label for="admin-token">Token / senha</label>
+            <input id="admin-token" name="admin-token" type="password" autocomplete="current-password" />
+          </div>
+          <button type="button" id="btn-admin-access" data-testid="btn-admin-access">
+            Acessar painel admin
+          </button>
+        </div>
+
+        <p id="login-message" data-testid="login-message" class="muted" style="margin-top: 1.25rem">
+        </p>
+      </div>
+    </div>
+    <script>
+      const formClient = document.getElementById('form-client');
+      const formAdmin = document.getElementById('form-admin');
+      const tabClient = document.getElementById('tab-client');
+      const tabAdmin = document.getElementById('tab-admin');
+      const msg = document.getElementById('login-message');
+
+      function showClient() {
+        formClient.classList.remove('hidden');
+        formAdmin.classList.add('hidden');
+        tabClient.classList.remove('secondary');
+        tabAdmin.classList.add('secondary');
+      }
+      function showAdmin() {
+        formAdmin.classList.remove('hidden');
+        formClient.classList.add('hidden');
+        tabAdmin.classList.remove('secondary');
+        tabClient.classList.add('secondary');
+      }
+
+      tabClient.addEventListener('click', showClient);
+      tabAdmin.addEventListener('click', showAdmin);
+
+      async function postLogin(role, username, password) {
+        msg.textContent = '';
+        msg.className = 'muted';
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ role, username, password }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          msg.textContent = data.message;
+          msg.className = 'success';
+          msg.setAttribute('data-login-success', 'true');
+        } else {
+          msg.textContent = data.message || 'Falha';
+          msg.removeAttribute('data-login-success');
+        }
+      }
+
+      document.getElementById('btn-login').addEventListener('click', () => {
+        postLogin('client', document.getElementById('user').value, document.getElementById('pass').value);
+      });
+      document.getElementById('btn-admin-access').addEventListener('click', () => {
+        postLogin(
+          'admin',
+          document.getElementById('admin-field').value,
+          document.getElementById('admin-token').value
+        );
+      });
+    </script>
+  </body>
+</html>
