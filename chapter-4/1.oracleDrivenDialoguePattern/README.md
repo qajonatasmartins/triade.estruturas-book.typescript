@@ -19,6 +19,66 @@ Padrão documentado por Jonatas Martins (2023–2024).
   - **Questions** (`*.questions.ts` em `pages/`) — oráculo da **interface** (web ou app): estado visível, textos, elementos exibidos.
   - **Business** (`*.business.ts` em `core-api`) — oráculo da **API**: validação via serviços (por exemplo, dados conferidos no backend após uma ação na UI).
 
+## Arquitetura
+
+```mermaid
+flowchart TB
+    subgraph exec [Camada de Execução]
+        Teste[Teste]
+        Flows[Flows]
+        Actions[Actions]
+        Interactions[Interactions]
+    end
+
+    subgraph val [Camada de Validação]
+        Business[Business]
+        Questions[Questions]
+    end
+
+    subgraph tech [Camada Técnica]
+        Elements[Elements]
+        ElementsBase[Elements Base]
+        InterfaceUI[Interface UI]
+        InterfaceAPI[Interface API]
+        Services[Services]
+        Builder[Builder]
+        Data[Data]
+        Enum[Enum]
+        Utils[Utils]
+        Helpers[Helpers]
+        Commands[Commands]
+    end
+
+    Teste -->|pode ter| Flows
+    Teste -->|pode ter| Actions
+    Teste -->|pode usar| Data
+    Teste -->|pode usar| Questions
+    Teste -->|pode usar| Business
+    Teste -->|pode usar| Builder
+
+    Flows -->|pode ter| Actions
+
+    Actions -->|pode ter| Interactions
+    Actions -->|pode usar| Utils
+
+    Interactions -->|usa| Commands
+    Interactions -->|usa| Elements
+
+    Elements -->|pode usar| ElementsBase
+    Elements -->|pode usar| Enum
+
+    Business -->|pode usar| InterfaceAPI
+    Business -->|usa| Services
+    Business -->|pode usar| Utils
+
+    Questions -->|pode usar| InterfaceUI
+    Questions -->|pode usar| Interactions
+    Questions -->|pode usar| Utils
+
+    Data -->|pode usar| Helpers
+    Data -->|pode usar| Enum
+```
+
 ## Estrutura de pastas
 
 | **Pasta**      | **Descrição / Função**                                                                                                                                       |

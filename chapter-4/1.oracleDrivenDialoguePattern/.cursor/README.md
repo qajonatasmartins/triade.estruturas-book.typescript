@@ -4,7 +4,7 @@ Estrutura de regras e skills para o projeto de automação no padrão Oracle-Dri
 
 ## Estrutura
 
-```
+``` text
 .cursor/
 ├── commands/       # Slash commands (/create-test)
 ├── rules/          # Regras por tipo de arquivo (.mdc)
@@ -23,11 +23,11 @@ Comandos invocados com `/` no chat:
 
 Regras aplicadas automaticamente ao editar arquivos que correspondem aos globs:
 
-| Arquivo         | Glob                  | Descrição                 |
+| Arquivo         | Glob                 | Descrição                 |
 |-----------------|----------------------|---------------------------|
 | elements.mdc    | `**/*.elements.ts`   | Page Elements             |
 | actions.mdc     | `**/*.actions.ts`    | Page Actions              |
-| interactions.mdc| `**/*.interactions.ts`| Page Interactions        |
+|interactions.mdc| `**/*.interactions.ts`| Page Interactions         |
 | questions.mdc   | `**/*.questions.ts`  | Page Questions            |
 | flows.mdc       | `**/*.flows.ts`      | User Flows                |
 | service.mdc     | `**/*.service.ts`    | API Services              |
@@ -71,3 +71,4 @@ Use as skills ao criar novos arquivos. Exemplos de triggers:
 - **create-base** - Componentes base
 - **create-constants** - Atualizar barrel
 - **create-utils** - Utilitários
+
