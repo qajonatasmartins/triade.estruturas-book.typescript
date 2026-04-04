@@ -1,1 +1,1 @@
-# triade.estruturas-book.typescript
+# ESTRUTURAS - Padrões não são só código, são fundações

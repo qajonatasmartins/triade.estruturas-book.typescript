@@ -81,21 +81,23 @@ flowchart TB
 
 ## Estrutura de pastas
 
-| **Pasta**      | **Descrição / Função**                                                                                                                                       |
+| **Pasta**      | **Descrição / Função**                                                                                                                                      |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `config/`      | Configurações do WebdriverIO por navegador (`chrome`, `firefox`, `edge`) e `wdio.conf.ts` base.                                                             |
 | `core-api/`    | Camada de API (Pactum): `service`, **business** (oráculo API), `builder`, `interface`, `utils`. Veja detalhes em [core-api/README.md](core-api/README.md).  |
 | `core-web/`    | Comandos customizados do WDIO (`commands/`) e constantes web. Mais informações em [core-web/README.md](core-web/README.md).                                 |
-| `data/`        | Dados de teste organizados por feature/cenário (`ctNN`, `paramsDefault`, textos esperados).                                                                  |
-| `enum/`        | Enumeradores para evitar uso de magic strings.                                                                                                               |
+| `data/`        | Dados de teste organizados por feature/cenário (`ctNN`, `paramsDefault`, textos esperados).                                                                 |
+| `enum/`        | Enumeradores para evitar uso de magic strings.                                                                                                              |
 | `flows/`       | Fluxos de usuário no padrão **Facade**: orquestram diversas Actions/páginas, oferecendo um ponto de entrada simplificado.                                   |
 | `interface/`   | Contratos TypeScript para UI/dados (exceto os definidos em `core-api`).                                                                                     |
-| `pages/`       | Page Objects: `*.elements`, `*.interactions`, `*.actions`, `*.questions` (oráculo web/app) e componentes reutilizáveis em `base/`.                          |
+| `pages/`       | `*.elements`, `*.interactions`, `*.actions`, `*.questions` (oráculo web/app) e componentes reutilizáveis em `base/`.                                        |
 | `reports/`     | Saída dos relatórios Allure (gerados pela execução dos testes automatizados).                                                                               |
 | `tests/`       | Casos de teste `CT-NN.test.ts` organizados por feature.                                                                                                     |
 | `.cursor/`     | Regras (`.mdc`), skills, comandos e MCP. Saiba mais em [.cursor/README.md](.cursor/README.md).                                                              |
 
 Na **raiz** do projeto: `package.json` (scripts de teste e relatório), `constants.ts` (Actions, Questions, Flows, Business, etc.) e `tsconfig.json`.
+
+- [Board com os Casos de testes](https://github.com/users/qajonatasmartins/projects/9)
 
 ## Inicialização do projeto
 

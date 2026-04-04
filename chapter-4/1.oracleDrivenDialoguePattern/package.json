@@ -1,6 +1,16 @@
 {
   "name": "1.oracleDrivenDialoguePattern",
   "type": "module",
+  "keywords": [
+    "webdriverio",
+    "allure",
+    "typescript",
+    "automation",
+    "e2e",
+    "testing",
+    "oracle-driven-dialogue-pattern"
+  ],
+  "author": "qajonatasmartins",
   "devDependencies": {
     "@faker-js/faker": "^10.3.0",
     "@types/chai": "^5.2.3",

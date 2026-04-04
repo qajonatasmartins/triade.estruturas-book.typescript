@@ -1,15 +1,14 @@
 import { faker } from "@faker-js/faker";
 import { preSetup } from "@/core-api/src/constants";
+import { userShared } from "@/data/shared/user.shared.data";
 
 export const ct01 = {
     userName: 'Raven Herzog',
-    email: `${process.env.TEST_EMAIL}`,
-    password: `${process.env.TEST_PASSWORD}`
+    ...userShared(`${process.env.TEST_EMAIL}`, `${process.env.TEST_PASSWORD}`),
 }
 
 export const ct06 = {
-    email: 'incorrect@email.com',
-    password: 'wrongpassword',
+    ...userShared('incorrect@email.com', 'wrongpassword'),
     message: 'Your email or password is incorrect!'
 }
 

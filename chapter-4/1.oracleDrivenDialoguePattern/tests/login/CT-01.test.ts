@@ -1,15 +1,12 @@
 import { loginActions, navBarActions, navBarQuestions } from '@/constants'
-import { allure } from '@/core-web/constants'
+import { allureHelpers } from '@/core-web/constants'
 import { productName, feature, severity } from '@/data/global.data'
 import { ct01 } from '@/data/login/login.data'
 
 describe(productName, async () => {
 
     it('[CT-01] - Realizar login com sucesso na plataforma', async () => {
-        allure.addFeature(feature.login)
-        allure.addSeverity(severity.critical)
-        allure.addTag("@smoke")
-        allure.addLink(`${process.env.TEST_CASE_URL}/1`, "Test Case")
+        allureHelpers.addAllureReportParameters(feature.login, severity.critical, "@smoke", `${process.env.TEST_CASE_URL}/1`)
         /** Arrange */
         await navBarActions.openLogin()
         /** Act */
