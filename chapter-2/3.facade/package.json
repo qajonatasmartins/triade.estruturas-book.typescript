@@ -1,0 +1,11 @@
+{
+  "name": "3.facade",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo Facade — app + Playwright + WebDriverIO",
+  "scripts": {
+    "test:playwright:e2e": "npm --prefix playwright run test:e2e",
+    "test:webdriverio:e2e": "npm --prefix webdriverIO run test:e2e"
+  },
+  "license": "ISC"
+}

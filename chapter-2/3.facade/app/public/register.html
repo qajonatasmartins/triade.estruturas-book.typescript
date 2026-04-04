@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro — Facade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <h1>Cadastro de usuário</h1>
+        <p class="muted">Nome, e-mail, senha e tipo de acesso (cliente ou administrador).</p>
+        <p><a href="/">← Início</a> · <a href="/login">Já tenho conta</a></p>
+      </header>
+      <div class="card" data-testid="register-card">
+        <h2>Novo usuário</h2>
+        <div class="field">
+          <label for="reg-name">Nome</label>
+          <input id="reg-name" name="reg-name" type="text" autocomplete="name" data-testid="register-name" />
+        </div>
+        <div class="field">
+          <label for="reg-email">E-mail</label>
+          <input id="reg-email" name="reg-email" type="email" autocomplete="email" data-testid="register-email" />
+        </div>
+        <div class="field">
+          <label for="reg-password">Senha</label>
+          <input
+            id="reg-password"
+            name="reg-password"
+            type="password"
+            autocomplete="new-password"
+            data-testid="register-password"
+          />
+        </div>
+        <div class="field">
+          <label for="reg-access">Tipo de acesso</label>
+          <select id="reg-access" name="reg-access" data-testid="register-access-type">
+            <option value="client">Cliente</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <button type="button" id="btn-register-submit" data-testid="btn-register-submit">Cadastrar</button>
+        <p
+          id="register-message"
+          data-testid="register-message"
+          class="muted"
+          style="margin-top: 1.25rem"
+        ></p>
+      </div>
+    </div>
+    <script>
+      const msg = document.getElementById('register-message');
+
+      document.getElementById('btn-register-submit').addEventListener('click', async () => {
+        msg.textContent = '';
+        msg.className = 'muted';
+        msg.removeAttribute('data-register-success');
+        const name = document.getElementById('reg-name').value.trim();
+        const email = document.getElementById('reg-email').value.trim();
+        const password = document.getElementById('reg-password').value;
+        const accessType = document.getElementById('reg-access').value;
+        const res = await fetch('/api/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password, accessType }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          msg.textContent = data.message;
+          msg.className = 'success';
+          msg.setAttribute('data-register-success', 'true');
+        } else {
+          msg.textContent = data.message || 'Falha no cadastro';
+        }
+      });
+    </script>
+  </body>
+</html>

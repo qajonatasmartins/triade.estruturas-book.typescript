@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login — Facade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <h1>Login</h1>
+        <p class="muted">Use o e-mail e a senha cadastrados na tela de registro.</p>
+        <p><a href="/">← Início</a> · <a href="/register">Cadastrar usuário</a></p>
+      </header>
+      <div class="card" data-testid="login-card">
+        <h2>Entrar</h2>
+        <div class="field">
+          <label for="login-email">E-mail</label>
+          <input
+            id="login-email"
+            name="login-email"
+            type="email"
+            autocomplete="username"
+            data-testid="login-email"
+          />
+        </div>
+        <div class="field">
+          <label for="login-password">Senha</label>
+          <input
+            id="login-password"
+            name="login-password"
+            type="password"
+            autocomplete="current-password"
+            data-testid="login-password"
+          />
+        </div>
+        <button type="button" id="btn-login-submit" data-testid="btn-login-submit">Entrar</button>
+        <p id="login-message" data-testid="login-message" class="muted" style="margin-top: 1.25rem"></p>
+      </div>
+    </div>
+    <script>
+      const msg = document.getElementById('login-message');
+
+      document.getElementById('btn-login-submit').addEventListener('click', async () => {
+        msg.textContent = '';
+        msg.className = 'muted';
+        msg.removeAttribute('data-login-success');
+        const email = document.getElementById('login-email').value.trim();
+        const password = document.getElementById('login-password').value;
+        const res = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          msg.textContent = data.message;
+          msg.className = 'success';
+          msg.setAttribute('data-login-success', 'true');
+        } else {
+          msg.textContent = data.message || 'Falha no login';
+        }
+      });
+    </script>
+  </body>
+</html>

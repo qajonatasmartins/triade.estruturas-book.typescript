@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Facade — Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <h1>Facade — automação de testes</h1>
+        <p>
+          Demo com login e cadastro de usuário. A fachada nos testes agrupa os subsistemas de login e
+          cadastro em uma API simples.
+        </p>
+      </header>
+      <div class="card">
+        <h2>Navegação</h2>
+        <nav class="nav-links">
+          <a href="/login">Login — e-mail e senha</a>
+          <a href="/register">Cadastro — nome, e-mail, senha e tipo de acesso</a>
+        </nav>
+      </div>
+      <footer>API: <code>POST /api/register</code> e <code>POST /api/login</code></footer>
+    </div>
+  </body>
+</html>
