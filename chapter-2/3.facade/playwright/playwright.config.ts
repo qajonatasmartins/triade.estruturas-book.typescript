@@ -15,7 +15,7 @@ export default defineConfig({
   timeout: 60000,
   use: {
     baseURL,
-    headless: false,
+    headless: true,
     trace: 'on-first-retry',
   },
   projects: [
