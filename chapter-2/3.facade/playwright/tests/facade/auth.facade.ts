@@ -1,5 +1,5 @@
 import type { Page } from '@playwright/test';
-import type { IUsuarioCadastro } from '../interfaces/iUsuarioCadastro.interface';
+import type { IUserRegistration } from '../interfaces/IUserRegistration.interface';
 import { LoginPage } from '../pages/login/login.page';
 import { RegisterPage } from '../pages/register/register.page';
 
@@ -15,8 +15,8 @@ export class AuthFacade {
     this.register = new RegisterPage(page);
   }
 
-  async cadastrarEEntrar(dados: IUsuarioCadastro): Promise<void> {
-    await this.register.cadastrarUsuario(dados);
-    await this.login.entrar(dados.email, dados.senha);
+  async registerAndLogin(userData: IUserRegistration): Promise<void> {
+    await this.register.registerUser(userData);
+    await this.login.signIn(userData.email, userData.password);
   }
 }

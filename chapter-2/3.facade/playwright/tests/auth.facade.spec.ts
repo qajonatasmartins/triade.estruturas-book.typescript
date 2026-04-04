@@ -1,33 +1,33 @@
 import { test, expect } from '@playwright/test';
 import { AuthFacade } from './facade/auth.facade';
-import type { IUsuarioCadastro } from './interfaces/iUsuarioCadastro.interface';
+import type { IUserRegistration } from './interfaces/IUserRegistration.interface';
 import { LoginPage } from './pages/login/login.page';
 
-function usuarioUnico(sufixo: string): IUsuarioCadastro {
+function uniqueUser(suffix: string): IUserRegistration {
   return {
-    nome: `QA ${sufixo}`,
-    email: `qa.${sufixo}@example.com`,
-    senha: 'SenhaSegura1!',
-    tipoAcesso: 'client',
+    name: `QA ${suffix}`,
+    email: `qa.${suffix}@example.com`,
+    password: 'SenhaSegura1!',
+    accessType: 'client',
   };
 }
 
 test.describe('Facade — Auth (login + cadastro)', () => {
 
   let auth: AuthFacade;
-  let dados: IUsuarioCadastro;
+  let userData: IUserRegistration;
   let login: LoginPage;
 
   test('deve cadastrar e em seguida entrar via fachada (fluxo completo)', async ({ page }) => {
     /** Arrange */
     auth = new AuthFacade(page);
-    dados = usuarioUnico(`facade-${Date.now()}`);
+    userData = uniqueUser(`facade-${Date.now()}`);
     login = new LoginPage(page);
     /** Act */
-    await auth.cadastrarEEntrar(dados);
+    await auth.registerAndLogin(userData);
 
     /** Assert */
-    const msg = await login.getMensagem();
+    const msg = await login.getMessage();
     expect(msg).toContain('Olá,');
     expect(msg).toContain('QA');
     expect(msg).toContain('cliente');

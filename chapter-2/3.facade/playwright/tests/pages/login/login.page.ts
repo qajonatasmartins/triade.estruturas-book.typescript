@@ -13,22 +13,42 @@ export class LoginPage {
     this.mensagem = page.getByTestId('login-message');
   }
 
-  async abrir(): Promise<void> {
+  /**
+   * Abre a página de login
+   * @returns void
+   */
+  async open(): Promise<void> {
     await this.page.goto('/login');
   }
 
-  async entrar(email: string, senha: string): Promise<void> {
-    await this.abrir();
-    await this.preencherEEntrar(email, senha);
+  /**
+   * Realiza o login
+   * @param email - Email do usuário
+   * @param senha - Senha do usuário
+   * @returns void
+   */
+  async signIn(email: string, senha: string): Promise<void> {
+    await this.open();
+    await this.fillAndSubmit(email, senha);
   }
 
-  async preencherEEntrar(email: string, senha: string): Promise<void> {
+  /**
+   * Preenche o formulário de login e envia
+   * @param email - Email do usuário
+   * @param senha - Senha do usuário
+   * @returns void
+   */
+  async fillAndSubmit(email: string, senha: string): Promise<void> {
     await this.email.fill(email);
     await this.password.fill(senha);
     await this.btnSubmit.click();
   }
 
-  async getMensagem(): Promise<string> {
+  /**
+   * Obtém a mensagem de login
+   * @returns Mensagem de login
+   */
+  async getMessage(): Promise<string> {
     await this.mensagem.waitFor({ state: 'visible' });
     await this.page.waitForFunction(() => {
       const el = document.querySelector('[data-testid="login-message"]');

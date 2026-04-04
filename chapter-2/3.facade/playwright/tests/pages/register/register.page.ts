@@ -1,5 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
-import type { IUsuarioCadastro } from '../../interfaces/iUsuarioCadastro.interface';
+import type { IUserRegistration } from '../../interfaces/IUserRegistration.interface';
 
 export class RegisterPage {
   private readonly nome: Locator;
@@ -18,24 +18,42 @@ export class RegisterPage {
     this.mensagem = page.getByTestId('register-message');
   }
 
-  async abrir(): Promise<void> {
+  /**
+   * Abre a página de registro
+   * @returns void
+   */
+  async open(): Promise<void> {
     await this.page.goto('/register');
   }
 
-  async cadastrarUsuario(dados: IUsuarioCadastro): Promise<void> {
-    await this.abrir();
-    await this.preencherECadastrar(dados);
+  /**
+   * Registra um usuário
+   * @param userData - Dados do usuário
+   * @returns void
+   */
+  async registerUser(userData: IUserRegistration): Promise<void> {
+    await this.open();
+    await this.fillAndSubmit(userData);
   }
 
-  async preencherECadastrar(dados: IUsuarioCadastro): Promise<void> {
-    await this.nome.fill(dados.nome);
-    await this.email.fill(dados.email);
-    await this.senha.fill(dados.senha);
-    await this.tipoAcesso.selectOption(dados.tipoAcesso);
+  /**
+   * Preenche o formulário de registro e envia
+   * @param userData - Dados do usuário
+   * @returns void
+   */
+  async fillAndSubmit(userData: IUserRegistration): Promise<void> {
+    await this.nome.fill(userData.name);
+    await this.email.fill(userData.email);
+    await this.senha.fill(userData.password);
+    await this.tipoAcesso.selectOption(userData.accessType);
     await this.btnSubmit.click();
   }
 
-  async getMensagem(): Promise<string> {
+  /**
+   * Obtém a mensagem de registro
+   * @returns Mensagem de registro
+   */
+  async getMessage(): Promise<string> {
     await this.mensagem.waitFor({ state: 'visible' });
     await this.page.waitForFunction(() => {
       const el = document.querySelector('[data-testid="register-message"]');
