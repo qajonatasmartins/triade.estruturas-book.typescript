@@ -1,0 +1,25 @@
+{
+  "name": "strategy-webdriverio",
+  "type": "module",
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.0",
+    "@wdio/cli": "^9.23.2",
+    "@wdio/globals": "^9.23.0",
+    "@wdio/local-runner": "^9.23.2",
+    "@wdio/mocha-framework": "^9.23.2",
+    "@wdio/spec-reporter": "^9.23.2",
+    "expect-webdriverio": "^5.6.4",
+    "start-server-and-test": "^2.0.8"
+  },
+  "scripts": {
+    "test": "wdio run ./wdio.conf.ts",
+    "test:e2e": "start-server-and-test \"npm --prefix ../app run start\" http://localhost:3333 \"wdio run ./wdio.conf.ts\""
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.4",
+    "mocha": "^11.7.5",
+    "webdriverio": "^9.27.0"
+  }
+}

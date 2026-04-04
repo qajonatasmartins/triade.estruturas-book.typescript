@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cadastro — Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <h1>Cadastro</h1>
+        <p class="muted">Informe seus dados e o tipo de pessoa. <a href="/">← Início</a></p>
+      </header>
+      <div class="card">
+        <h2>Nova conta</h2>
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" autocomplete="name" data-testid="input-nome" />
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" data-testid="input-email" />
+        </div>
+        <span class="field-label">Tipo de pessoa</span>
+        <div class="gender-group" role="radiogroup" aria-label="Tipo de pessoa">
+          <div class="gender-option">
+            <input type="radio" name="genero" id="genero-masculino" value="masculino" />
+            <label for="genero-masculino" data-testid="gender-masculino">Masculino</label>
+          </div>
+          <div class="gender-option">
+            <input type="radio" name="genero" id="genero-feminino" value="feminino" />
+            <label for="genero-feminino" data-testid="gender-feminino">Feminino</label>
+          </div>
+          <div class="gender-option">
+            <input type="radio" name="genero" id="genero-nao-binario" value="nao_binario" />
+            <label for="genero-nao-binario" data-testid="gender-nao-binario">Não binário</label>
+          </div>
+        </div>
+        <button type="button" id="btn-signup" data-testid="btn-signup">Criar cadastro</button>
+        <p id="signup-message" data-testid="signup-message" class="muted" style="margin-top: 1.25rem"></p>
+      </div>
+    </div>
+    <script>
+      const msg = document.getElementById('signup-message');
+
+      document.getElementById('btn-signup').addEventListener('click', async () => {
+        msg.textContent = '';
+        msg.className = 'muted';
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const checked = document.querySelector('input[name="genero"]:checked');
+        const genero = checked ? checked.value : '';
+
+        const res = await fetch('/api/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, email, genero }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          msg.textContent = data.message;
+          msg.className = 'success';
+          msg.setAttribute('data-signup-success', 'true');
+        } else {
+          msg.textContent = data.message || 'Falha';
+          msg.removeAttribute('data-signup-success');
+        }
+      });
+    </script>
+  </body>
+</html>

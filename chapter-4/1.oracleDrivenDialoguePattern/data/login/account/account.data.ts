@@ -1,8 +1,8 @@
 import { faker } from "@faker-js/faker";
 import { preSetup } from "@/core-api/src/constants";
+import { signupShared } from "@data/shared/signup.shared.data";
 import { ICreateAccount } from "@/core-api/src/interface/account/ICreateAccount.interface";
-import { titleTypeEnum } from "@/enum/login/signup/signup.enum";
-import { ISignup } from "@/interface/login/signup/ISignup.interface";
+import { ISignup } from "@interface/login/signup/ISignup.interface";
 
 export const ct04 = () => {
     const testCase = 'CT-04'
@@ -23,13 +23,6 @@ export const ct05 = () => {
         title: 'ACCOUNT CREATED!',
         firstParagraph: 'Congratulations! Your new account has been successfully created!',
         secondParagraph: 'You can now take advantage of member privileges to enhance your online shopping experience with us.',
-        user: (account: ICreateAccount): ISignup => {
-            return {
-                ...account,
-                mrOrMrs: titleTypeEnum.MR.toString(),
-                newsletter: true,
-                specialOffer: true,
-            } as ISignup
-        }
+        user: (account: ICreateAccount): ISignup => signupShared(account)
     }
 }

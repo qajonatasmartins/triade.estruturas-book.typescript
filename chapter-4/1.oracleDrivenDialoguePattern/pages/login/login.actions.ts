@@ -1,4 +1,4 @@
-import { IUserLogin, IUserSignup } from "@/interface/login/IUser.interface";
+import { IUserLogin, IUserSignup } from "@interface/login/IUser.interface";
 import LoginInteractions from "./login.interactions";
 import SignupActions from "./signup/signup.actions";
 

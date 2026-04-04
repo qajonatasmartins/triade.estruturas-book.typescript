@@ -167,7 +167,7 @@ export const config: WebdriverIO.Config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    beforeTest: async function (test, context) {
+    beforeTest: async function (_test, _context) {
         await browser.url(`${process.env.URL}`)
         await browser.maximizeWindow()
     },

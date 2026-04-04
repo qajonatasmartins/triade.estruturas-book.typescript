@@ -2,6 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@strategies/*": ["./strategies/*"],
+      "@pages/*": ["./pages/*"],
+      "@base/*": ["./pages/base/*"],
+      "@interface/*": ["./interface/*"],
+      "@flows/*": ["./flows/*"],
+      "@enum/*": ["./enum/*"],
+      "@data/*": ["./data/*"],
       "@/*": ["./*"]
     },
     "moduleResolution": "node",
@@ -37,6 +44,7 @@
     "core-api",
     "core-web",
     "flows",
-    "interface"
+    "interface",
+    "strategies"
   ]
 }

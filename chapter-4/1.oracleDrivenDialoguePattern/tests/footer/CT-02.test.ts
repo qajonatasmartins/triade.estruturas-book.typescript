@@ -1,6 +1,6 @@
 import { footerActions, footerQuestions } from '@/constants'
-import { feature, productName, severity } from '@/data/global.data'
-import { ct2 } from '@/data/footer/footer.data'
+import { feature, productName, severity } from '@data/global.data'
+import { ct2 } from '@data/footer/footer.data'
 import { allureHelpers } from '@/core-web/constants'
 
 describe(productName, async () => {

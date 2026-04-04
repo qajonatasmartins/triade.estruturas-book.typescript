@@ -1,16 +1,13 @@
 import { createAccountBuilder } from '@/core-api/src/constants'
-import { ct05 } from '@/data/login/account/account.data'
+import { ct05 } from '@data/login/account/account.data'
 import { accountBusiness, registerFlows, successMessagesQuestions } from '@/constants'
-import { allure } from '@/core-web/constants'
-import { feature, productName, severity } from '@/data/global.data'
+import { allureHelpers } from '@/core-web/constants'
+import { feature, productName, severity } from '@data/global.data'
 
 describe(productName, () => {
 
     it('[CT-05] - Cadastrar uma conta na plataforma', async () => {
-        allure.addFeature(feature.account)
-        allure.addSeverity(severity.critical)
-        allure.addTag("@regression")
-        allure.addLink(`${process.env.TEST_CASE_URL}/5`, "Test Case")
+        allureHelpers.addAllureReportParameters(feature.account, severity.critical, "@regression", `${process.env.TEST_CASE_URL}/5`)
         /** Arrange */
         const account = createAccountBuilder
             .withName(ct05().name)

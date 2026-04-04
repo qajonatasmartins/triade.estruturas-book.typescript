@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import { preSetup } from "@/core-api/src/constants";
-import { userShared } from "@/data/shared/user.shared.data";
+import { userShared } from "@data/shared/user.shared.data";
 
 export const ct01 = {
     userName: 'Raven Herzog',

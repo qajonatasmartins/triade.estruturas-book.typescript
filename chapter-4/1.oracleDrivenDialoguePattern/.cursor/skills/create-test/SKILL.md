@@ -17,15 +17,12 @@ description: Cria arquivos .test.ts para testes WebdriverIO no Oracle-Driven Dia
 import { createAccountBuilder } from '@/core-api/src/constants'
 import { ct[Nn] } from '@/data/[dominio]/[feature].data'
 import { [flows], [questions], [business] } from '@/constants'
-import { allure } from '@/core-web/constants'
+import { allureHelpers } from '@/core-web/constants'
 import { feature, productName, severity } from '@/data/global.data'
 
 describe(productName, () => {
     it('[CT-[Nn]] - [Descrição do cenário]', async () => {
-        allure.addFeature(feature.[nome])
-        allure.addSeverity(severity.[nivel])
-        allure.addTag("@regression")
-        allure.addLink(`${process.env.TEST_CASE_URL}/[nn]`, "Test Case")
+        allureHelpers.addAllureReportParameters(feature.[nome], severity.[nivel], "@regression", `${process.env.TEST_CASE_URL}/[nn]`) 
         /** Arrange */
         const account = createAccountBuilder.withName(ct[Nn]().name).build()
         const signup = ct[Nn]().user(account)

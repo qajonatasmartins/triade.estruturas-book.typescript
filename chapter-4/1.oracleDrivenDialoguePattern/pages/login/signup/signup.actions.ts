@@ -1,6 +1,7 @@
-import { titleTypeEnum } from "@/enum/login/signup/signup.enum"
-import { IBirthday, ISignup, ISignupAddress, ISignupBasic } from "@/interface/login/signup/ISignup.interface"
+import { titleTypeEnum } from "@enum/login/signup/signup.enum"
+import { IBirthday, ISignup, ISignupAddress, ISignupBasic } from "@interface/login/signup/ISignup.interface"
 import SignupInteractions from "./signup.interactions"
+import { getTitleSelectionStrategy } from "@strategies/login/titleSelection/titleSelection.registry"
 
 export default class SignupActions {
 
@@ -21,7 +22,8 @@ export default class SignupActions {
      * @param titleType - Tipo de título (Mr. ou Mrs.)
      */
     public async selectTitle(titleType: titleTypeEnum) {
-        titleType === titleTypeEnum.MR.toString() ? await this.interactions.clickCheckMr() : await this.interactions.clickCheckMrs()
+        const strategy = getTitleSelectionStrategy(titleType);
+        await strategy.execute(this.interactions);
     }
 
     /**
